@@ -38,38 +38,43 @@ const ToDoList = () => {
   };
   return (
     <section>
-      <div>
-        <h1 className="to-do-list">To-Do-List</h1>
-        <div>
-          <div className="input-add-btn">
-            <input
-              value={newTask}
-              type="text"
-              onChange={handleInputChange}
-              placeholder="Enter Task"
-            />
-            <button className="add-btn" onClick={addNewTask}>
-              Add
-            </button>
+      <div className="main-con">
+        <div className="wrapper">
+          <h1 className="to-do-list">To-Do-List</h1>
+          <div>
+            <div className="input-add-btn">
+              <input
+                value={newTask}
+                type="text"
+                onChange={handleInputChange}
+                placeholder="Enter Task"
+              />
+              <button className="add-btn" onClick={addNewTask}>
+                Add
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="list-con">
-          <ol>
-            {tasks.map((task, index) => (
-              <li key={index}>
-                <span className="texts">{task}</span>
-                <button className="delete-btn" onClick={() => deleteBtn(index)}>
-                  Delete
-                </button>
-                <button className="move-btn" onClick={() => upBtn(index)}>
-                  👆
-                </button>
-                <button className="move-btn" onClick={() => downBtn(index)}>
-                  👇
-                </button>
-              </li>
-            ))}
-          </ol>
+          <div className="list-con">
+            <ol>
+              {tasks.map((task, index) => (
+                <li key={index}>
+                  <span className="texts">{task}</span>
+                  <button
+                    className="delete-btn"
+                    onClick={() => deleteBtn(index)}
+                  >
+                    Delete
+                  </button>
+                  <button className="move-btn" onClick={() => upBtn(index)}>
+                    👆
+                  </button>
+                  <button className="move-btn" onClick={() => downBtn(index)}>
+                    👇
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>
